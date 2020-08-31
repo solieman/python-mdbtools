@@ -76,6 +76,10 @@ def main(args):
         else:
             for table in tables_names:
                 export_to_csv(file_path, table)
+    if args['table']:
+        for table_name in args['table']:
+            temp_df = get_table_content(file_path, table_name)
+            print(temp_df.head())
 
 
 if __name__ == "__main__":

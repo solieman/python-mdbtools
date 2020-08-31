@@ -22,24 +22,40 @@ python read_mdb.py --help
 ```
 ```shell script
 usage: read_mdb.py [-h] [--file [FILE [FILE ...]]]
-                   [--table [TABLE [TABLE ...]]]
+                   [--table [TABLE [TABLE ...]]] [--csv]
 
 optional arguments:
   -h, --help            show this help message and exit
   --file [FILE [FILE ...]], -f [FILE [FILE ...]]
                         path to the file
   --table [TABLE [TABLE ...]], -t [TABLE [TABLE ...]]
-                        table name
+                        table name to display
+  --csv                 export table to csv file
 ```
 - We expect you have file with the extension `file_name.mdb` and need to explore or extract its data
 
 #### Example
+##### --file
+This command will print list of tables names inside the file
 ```shell script
 python read_mdb.py --file file_name.mdb
 ```
-This command will print list of tables names inside the file
-
+##### --table
+This command will print sample of the content of the table
 ```shell script
 python read_mdb.py --file file_name.mdb --table table_name
 ```
-This command will print content of the table
+
+##### --csv
+This command will export all tables to csv files
+```shell script
+python read_mdb.py --file file_name.mdb --csv
+```
+
+##### --table --csv
+This command will export specific table content to csv file
+```shell script
+python read_mdb.py --file file_name.mdb --table table_name --csv
+```
+
+
